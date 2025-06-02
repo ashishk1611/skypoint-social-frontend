@@ -83,11 +83,11 @@ const postsSlice = createSlice({
         }
       })
       .addCase(votePost.fulfilled, (state, action) => {
-        const { postId, value } = action.payload;
+        const { postId, votes, votesCount } = action.payload;
         const post = state.posts.find((p) => p.id === postId);
         if (post) {
-          post.votes += value;
-          post.votesCount += 1;
+          post.votes = votes;
+          post.votesCount = votesCount;
         }
       });
   },

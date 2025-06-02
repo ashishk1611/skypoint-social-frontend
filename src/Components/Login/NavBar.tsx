@@ -1,7 +1,6 @@
 import { Avatar } from "@mui/material";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
-import Login from "./Login";
 import Logout from "./Logout";
 
 const Navbar = () => {
@@ -14,7 +13,7 @@ const Navbar = () => {
       </div>
 
       <div>
-        {user ? (
+        {user && (
           <div className="flex items-center gap-3">
             <Avatar sx={{ width: 32, height: 32 }}>
               {user.displayName?.[0] ?? "U"}
@@ -24,8 +23,6 @@ const Navbar = () => {
             </span>
             <Logout />
           </div>
-        ) : (
-          <Login />
         )}
       </div>
     </header>

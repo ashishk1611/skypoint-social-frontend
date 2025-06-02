@@ -13,11 +13,11 @@ export const votePost = createAsyncThunk(
     userId: string;
     value: number;
   }) => {
-    await axios.post(`${API_BASE_URL}/Vote`, {
+    const response = await axios.post(`${API_BASE_URL}/Vote`, {
       postId,
       userId,
       value,
     });
-    return { postId, value };
+    return response.data;
   }
 );
