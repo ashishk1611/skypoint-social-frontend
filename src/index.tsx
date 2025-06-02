@@ -3,6 +3,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import App from "./App";
 import NavBar from "./Components/Login/NavBar";
 import "./index.css";
@@ -19,6 +20,7 @@ root.render(
         <Provider store={store}>
           <BrowserRouter>
             <NavBar />
+            <ToastContainer position="top-right" autoClose={3000} />
             <App />
           </BrowserRouter>
         </Provider>

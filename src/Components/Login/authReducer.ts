@@ -36,7 +36,8 @@ export const loginWithGoogle = createAsyncThunk(
 
       // Save token in localStorage or cookie
       localStorage.setItem("token", token);
-
+      const loginTime = new Date().toISOString();
+      localStorage.setItem("loginTime", loginTime);
       return user; // should be { id, displayName, email }
     } catch (err: any) {
       return rejectWithValue(err.response?.data || "Google login failed");
